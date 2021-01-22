@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
-
+import 'ui_utils.dart';
+import 'home_feed_page.dart';
 class RegistryHome extends StatefulWidget {
   @override
   _RegistryHomeState createState() => _RegistryHomeState();
@@ -74,7 +75,7 @@ class _RegistryHomeState extends State<RegistryHome> {
       case 0:
         _scrollController =
             ScrollController(initialScrollOffset: _lastFeedScrollOffset);
-        return Container(); //HomeFeedPage(scrollController: _scrollController);
+        return HomeFeedPage(scrollController: _scrollController);
       default:
         const tabIndexToNameMap = {
           0: 'Home',
@@ -129,16 +130,17 @@ class _RegistryHomeState extends State<RegistryHome> {
         backgroundColor: Colors.grey[50],
         title: Row(
           children: <Widget>[
-            Builder(builder: (BuildContext context) {
-              return GestureDetector(
-                child: Icon(OMIcons.cameraAlt, color: Colors.black, size: 32.0),
-                onTap: () => null, //showSnackbar(context, 'Add Photo'),
-              );
-            }),
+            // Builder(builder: (BuildContext context) {
+            //   return 
+            //   GestureDetector(
+            //     child: Icon(OMIcons.cameraAlt, color: Colors.black, size: 32.0),
+            //     onTap: () => showSnackbar(context, 'Add Photo'),
+            //   );
+            // }),
             SizedBox(width: 12.0),
             GestureDetector(
               child: Text(
-                'Instagroot',
+                'Portfolio Registry',
                 style: TextStyle(
                     fontFamily: 'Billabong',
                     color: Colors.black,
@@ -153,14 +155,14 @@ class _RegistryHomeState extends State<RegistryHome> {
             return IconButton(
               color: Colors.black,
               icon: Icon(OMIcons.liveTv),
-              onPressed: () => null, //showSnackbar(context, 'Live TV'),
+              onPressed: () => showSnackbar(context, 'Live TV'),
             );
           }),
           Builder(builder: (BuildContext context) {
             return IconButton(
               color: Colors.black,
               icon: Icon(OMIcons.nearMe),
-              onPressed: () => null, // showSnackbar(context, 'My Messages'),
+              onPressed: () => showSnackbar(context, 'My Messages'),
             );
           }),
         ],
