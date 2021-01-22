@@ -14,18 +14,19 @@ class HomeFeedPage extends StatefulWidget {
 }
 
 class _HomeFeedPageState extends State<HomeFeedPage> {
+  
   final _posts = <Post>[
     Post(
       user: featured,
-      imageUrls: [
-        'assets/images/wagner.jpg',
-        'assets/images/howe_uni.jpg',
-        'assets/images/dohlonega.png',
-        'assets/images/allen_jersey.jpg',
-        'assets/images/gretzky_rookie.jpg',
-        'assets/images/charizard.jpg',
-        'assets/images/gretzky_jersey.jpg',
-        'assets/images/gretzky_jersey_2.jpg',
+      items: [
+        Item('assets/images/wagner.jpg', 'A rare opportunity to own a piece of one of the most important sports cards in history.  We are selling shares in this once in a lifetime opportunity.'),
+        Item('assets/images/howe_uni.jpg', 'This game worn Howe jersey is now available over at MeiGray auctions.'),
+        Item('assets/images/dohlonega.png', 'Shares are now being issued for rare Confederate Gold pieces.'),
+        Item('assets/images/allen_jersey.jpg', 'Bid on this game worn jersey from Josh Allen to to support a great cause'),
+        Item('assets/images/gretzky_rookie.jpg', 'Get a piece of one of the hottest cards in the market today.'),
+        Item('assets/images/charizard.jpg', "View Steve Aoki's amazing collection"),
+        // Item('assets/images/gretzky_jersey.jpg', 'More from the Great One'),
+        // Item('assets/images/gretzky_jersey_2.jpg', '...'),
       ],
       likes: [
         Like(user: heritage),
@@ -35,18 +36,18 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
       ],
       comments: [
         Comment(
-          text: 'So we’re saving the galaxy again? #gotg',
-          user: heritage,
+          text: 'Hey!, I have one of those!',
+          user: ken,
           commentedAt: DateTime(2019, 5, 23, 14, 35, 0),
           likes: [Like(user: nickwu241)],
         ),
       ],
-      location: 'Heritage Auctions',
+      location: 'Items curated by the Registry staff',
       postedAt: DateTime(2019, 5, 23, 12, 35, 0),
     ),
     Post(
       user: allen,
-      imageUrls: ['assets/images/allen_jersey.jpg'],
+      items: [Item('assets/images/allen_jersey.jpg', "My game worn jersey from Super Bowl LIV is being auctioned. Proceeds benefit Osheis Children's Hopsital"),],
       likes: [],
       comments: [],
       location: 'Josh Allen Foundation',
@@ -54,9 +55,9 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
     ),
     Post(
       user: t206,
-      imageUrls: [
-        'assets/images/wagner.jpg',
-        'assets/images/cobb.jpg',
+      items: [
+        Item('assets/images/wagner.jpg', 'The holy grail'),
+        Item('assets/images/cobb.jpg', 'Rare Ty Cobb back card is available via private sale.'),
       ],
       likes: [Like(user: nickwu241)],
       comments: [],
@@ -65,10 +66,10 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
     ),
     Post(
       user: gretzky,
-      imageUrls: [
-        'assets/images/gretzky_jersey_2.jpg',
-        'assets/images/gretzky_rookie.jpg',
-        'assets/images/gretzky_jersey.jpg',
+      items: [
+        Item('assets/images/gretzky_jersey_2.jpg', "From the Great One's rookie season...."),
+        Item('assets/images/gretzky_rookie.jpg', 'There are currently 143 Gretzky Rookie cards available.'),
+        Item('assets/images/gretzky_jersey.jpg', 'Available in the May Heritage Auction'),
       ],
       likes: [Like(user: nickwu241)],
       comments: [],

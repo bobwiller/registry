@@ -53,8 +53,16 @@ const pwcc = User(
 
 const currentUser = nickwu241;
 
+class Item {
+  String imageUrl;
+  String description;
+
+  Item(this.imageUrl, this.description);
+}
+
 class Post {
-  List<String> imageUrls;
+  List<Item> items;
+  String description;
   final User user;
   final DateTime postedAt;
 
@@ -86,11 +94,12 @@ class Post {
   }
 
   Post({
-    @required this.imageUrls,
+    @required this.items,
     @required this.user,
     @required this.postedAt,
     @required this.likes,
     @required this.comments,
+    this.description,
     this.location,
   });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:registry/registry_home.dart';
+import 'package:registry/home.dart';
 
 void main() {
   runApp(MyApp());

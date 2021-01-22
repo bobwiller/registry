@@ -99,12 +99,61 @@ class _PostWidgetState extends State<PostWidget> {
             alignment: Alignment.center,
             children: <Widget>[
               CarouselSlider(
-                items: widget.post.imageUrls.map((url) {
-                  return Image.asset(
-                    url,
-                    fit: BoxFit.scaleDown,
-                    width: MediaQuery.of(context).size.width,
+                items: widget.post.items.map((item) {
+                  return Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Card(elevation: 3.0, 
+                    color: Colors.grey[300],
+                    child:
+                      Column(children: [
+                        Expanded(flex: 4, child: 
+                        Padding(
+                          padding: const EdgeInsets.only(top:8.0),
+                          child: Image.asset(
+                            item.imageUrl,
+                            fit: BoxFit.scaleDown,
+                            width: MediaQuery.of(context).size.width,
+                          ),
+                        ),                      ),
+                        Expanded(flex: 1, child: 
+                                              Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(item.description),
+                        )
+                        )
+                      ],)
+                    
+                    ),
                   );
+                      
+                      
+                      Card(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(item.imageUrl),
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.topCenter,
+          ),
+        ),
+        child: Text("YOUR TEXT"),
+      ),
+    );
+                  // Card(
+                  // elevation: 3.0,
+                  // child: Column(
+                  //   children: [
+                  //     Image.asset(
+                  //       item.imageUrl,
+                  //       fit: BoxFit.scaleDown,
+                  //       width: MediaQuery.of(context).size.width,
+                  //     ),
+                  //     Padding(
+                  //       padding: const EdgeInsets.all(8.0),
+                  //       child: Text(item.description),
+                  //     )
+                  //   ],
+                  // ));
                 }).toList(),
                 options: CarouselOptions(
                 viewportFraction: 1.0,
@@ -146,9 +195,9 @@ class _PostWidgetState extends State<PostWidget> {
               onPressed: () => showSnackbar(context, 'Share'),
             ),
             Spacer(),
-            if (widget.post.imageUrls.length > 1)
+            if (widget.post.items.length > 1)
               PhotoCarouselIndicator(
-                photoCount: widget.post.imageUrls.length,
+                photoCount: widget.post.items.length,
                 activePhotoIndex: _currentImageIndex,
               ),
             Spacer(),

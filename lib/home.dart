@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
+import 'channel_list_page.dart';
 import 'ui_utils.dart';
 import 'home_feed_page.dart';
 class RegistryHome extends StatefulWidget {
@@ -76,11 +77,15 @@ class _RegistryHomeState extends State<RegistryHome> {
         _scrollController =
             ScrollController(initialScrollOffset: _lastFeedScrollOffset);
         return HomeFeedPage(scrollController: _scrollController);
+      case 2:
+          _scrollController =
+            ScrollController(initialScrollOffset: _lastFeedScrollOffset);
+        return ChannelListPage(scrollController: _scrollController);
       default:
         const tabIndexToNameMap = {
           0: 'Home',
           1: 'Search',
-          2: 'Add Photo',
+          2: 'Add Channel',
           3: 'Notifications',
           4: 'Profile',
         };
@@ -94,14 +99,14 @@ class _RegistryHomeState extends State<RegistryHome> {
     const unselectedIcons = <IconData>[
       OMIcons.home,
       Icons.search,
-      OMIcons.addBox,
+      Icons.apps,
       Icons.favorite_border,
       Icons.person_outline,
     ];
     const selecteedIcons = <IconData>[
       Icons.home,
       Icons.search,
-      Icons.add_box,
+      Icons.apps,
       Icons.favorite,
       Icons.person,
     ];
