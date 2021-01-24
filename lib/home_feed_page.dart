@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:registry/ui_utils.dart';
+import 'channels/heritage.dart';
+import 'channels/my_portfolio.dart';
 import 'models.dart';
 import 'avatar_widget.dart';
 import 'post_widget.dart';
@@ -14,7 +16,16 @@ class HomeFeedPage extends StatefulWidget {
 }
 
 class _HomeFeedPageState extends State<HomeFeedPage> {
-  
+
+
+  int _currentChannel = 1;
+
+  @override
+  void initState() {
+    _currentChannel = 1;
+    super.initState();
+  }
+
   final _posts = <Post>[
     Post(
       user: featured,
@@ -78,22 +89,58 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
     ),    
   ];
 
+  final _users = <User>[
+    currentUser,
+    featured,
+    heritage,
+    allen,
+    t206,
+    meigray,
+    gretzky,
+    pwcc,
+    steve,
+    ken,
+    ebay,
+    danda
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (ctx, i) {
         if (i == 0) {
-          return StoriesBarWidget();
+          return StoriesBarWidget(onChannelChanged: (channel) {
+            setState(() {
+              print ('setting state');
+              _currentChannel = channel;
+            });
+          });
         }
-        return PostWidget(_posts[i - 1]);
+        return 
+ _currentChannel == 0 ?
+            MyPortfolioChannel(_users[_currentChannel])
+              : _currentChannel == 2 ?
+                HeritageChannel(_users[_currentChannel])
+                :   
+          PostWidget(_posts[i - 1]); 
+          
       },
-      itemCount: _posts.length + 1,
+      itemCount: (_currentChannel != 0 && _currentChannel != 2) ? _posts.length + 1 : 2,
       controller: widget.scrollController,
     );
   }
 }
 
-class StoriesBarWidget extends StatelessWidget {
+class StoriesBarWidget extends StatefulWidget {
+  final Function(int) onChannelChanged;
+
+  StoriesBarWidget({this.onChannelChanged});
+
+  @override
+  _StoriesBarWidgetState createState() => _StoriesBarWidgetState();
+}
+
+class _StoriesBarWidgetState extends State<StoriesBarWidget> {
   final _users = <User>[
     currentUser,
     featured,
@@ -124,7 +171,10 @@ class StoriesBarWidget extends StatelessWidget {
         itemBuilder: (ctx, i) {
           return AvatarWidget(
             user: _users[i],
-            onTap: () => _onUserStoryTap(context, i),
+            onTap: () { 
+              print ('channel changing...');
+              widget.onChannelChanged(i); 
+            },  //_onUserStoryTap(context, i),
             isLarge: true,
             isShowingUsernameLabel: true,
             isCurrentUserStory: i == 0,

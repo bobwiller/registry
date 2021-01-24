@@ -1,5 +1,7 @@
 import 'package:meta/meta.dart';
 //import 'package:timeago/timeago.dart' as timeago;
+const int $middot = 0x00B7;
+
 
 const placeholderStories = <Story>[Story()];
 
@@ -152,3 +154,4 @@ class Like {
 class Story {
   const Story();
 }
+

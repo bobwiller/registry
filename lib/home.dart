@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'channel_list_page.dart';
 import 'ui_utils.dart';
 import 'home_feed_page.dart';
+import 'widgets/app_drawer.dart';
 class RegistryHome extends StatefulWidget {
   @override
   _RegistryHomeState createState() => _RegistryHomeState();
@@ -44,9 +46,10 @@ class _RegistryHomeState extends State<RegistryHome> {
   }
 
     void _onTabTapped(BuildContext context, int index) {
-    if (index == _kAddPhotoTabIndex) {
-  //    showSnackbar(context, 'Add Photo');
-    } else if (index == _tabSelectedIndex) {
+  //   if (index == _kAddPhotoTabIndex) {
+  // //    showSnackbar(context, 'Add Photo');
+  //   } else 
+    if (index == _tabSelectedIndex) {
       _scrollToTop();
     } else {
       setState(() => _tabSelectedIndex = index);
@@ -81,6 +84,14 @@ class _RegistryHomeState extends State<RegistryHome> {
           _scrollController =
             ScrollController(initialScrollOffset: _lastFeedScrollOffset);
         return ChannelListPage(scrollController: _scrollController);
+      // case 3:
+      //     _scrollController =
+      //       ScrollController(initialScrollOffset: _lastFeedScrollOffset);
+      //   return AlternateListHomePage(scrollController: _scrollController);      
+      // case 3:
+      //     _scrollController =
+      //       ScrollController(initialScrollOffset: _lastFeedScrollOffset);
+      //   return ProfilePage(scrollController: _scrollController);            
       default:
         const tabIndexToNameMap = {
           0: 'Home',
@@ -100,14 +111,14 @@ class _RegistryHomeState extends State<RegistryHome> {
       OMIcons.home,
       Icons.search,
       Icons.apps,
-      Icons.favorite_border,
+      OMIcons.photo,
       Icons.person_outline,
     ];
     const selecteedIcons = <IconData>[
       Icons.home,
       Icons.search,
       Icons.apps,
-      Icons.favorite,
+      OMIcons.photo,
       Icons.person,
     ];
     final bottomNaivgationItems = List.generate(5, (int i) {
@@ -130,7 +141,9 @@ class _RegistryHomeState extends State<RegistryHome> {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
+    drawer: AppDrawer(),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         elevation: 1.0,
         backgroundColor: Colors.grey[50],
         title: Row(
@@ -146,23 +159,30 @@ class _RegistryHomeState extends State<RegistryHome> {
             GestureDetector(
               child: Text(
                 'Portfolio Registry',
-                style: TextStyle(
-                    fontFamily: 'Billabong',
-                    color: Colors.black,
-                    fontSize: 32.0),
+                style: GoogleFonts.kalam(
+                  color: Colors.black,
+                  fontSize: 32.0
+                )
+                
+                // TextStyle(
+                //     fontFamily: GoogleFonts.getFont('Lato'),
+                //     color: Colors.black,
+                //     fontSize: 32.0),
+
+
               ),
               onTap: _scrollToTop,
             ),
           ],
         ),
         actions: <Widget>[
-          Builder(builder: (BuildContext context) {
-            return IconButton(
-              color: Colors.black,
-              icon: Icon(OMIcons.liveTv),
-              onPressed: () => showSnackbar(context, 'Live TV'),
-            );
-          }),
+          // Builder(builder: (BuildContext context) {
+          //   return IconButton(
+          //     color: Colors.black,
+          //     icon: Icon(OMIcons.liveTv),
+          //     onPressed: () => showSnackbar(context, 'Live TV'),
+          //   );
+          // }),
           Builder(builder: (BuildContext context) {
             return IconButton(
               color: Colors.black,
