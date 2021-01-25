@@ -15,6 +15,7 @@ class HorizontalListItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             CachedNetworkImage(
+         //     boxfit: BoxFit.scaleDown,
               imageUrl: link,
               width: defaultWidth,
             ),

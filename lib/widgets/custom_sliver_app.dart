@@ -24,7 +24,7 @@ class CustomSliverAppBar extends StatelessWidget {
           centerTitle: false,
           background: Image.asset(
             "assets/images/goldin_hero.png",
-            fit: BoxFit.cover,
+            fit: BoxFit.scaleDown,
           ),
         ),
       ),
@@ -36,13 +36,9 @@ class CustomSliverAppBar extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                'Guerra ' +
+                'Goldin ' +
                     String.fromCharCode($middot) +
-                    ' Drama ' +
-                    String.fromCharCode($middot) +
-                    ' Ação ' +
-                    String.fromCharCode($middot) +
-                    ' Thriller ',
+                    ' Premier Auctions ',
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Comfortaa',
@@ -70,7 +66,7 @@ class CustomSliverAppBar extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          'Minha lista',
+                          'Add Channel',
                           style: TextStyle(
                             fontFamily: 'Comfortaa',
                             fontSize: 11,
@@ -97,7 +93,7 @@ class CustomSliverAppBar extends StatelessWidget {
                           size: 28,
                         ),
                         Text(
-                          "Assistir",
+                          "View Auction",
                           style: TextStyle(
                             fontFamily: 'Confortaa',
                             fontSize: 16,
@@ -125,7 +121,7 @@ class CustomSliverAppBar extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          'Saiba mais',
+                          'Learn More',
                           style: TextStyle(
                             fontFamily: 'Comfortaa',
                             fontSize: 11,
@@ -154,7 +150,7 @@ class CustomSliverAppBar extends StatelessWidget {
         Spacer(),
         FlatButton(
           child: Text(
-            "Séries",
+            "Auctions",
             style: TextStyle(
               fontSize: 16.0,
               color: Colors.white,
@@ -164,7 +160,7 @@ class CustomSliverAppBar extends StatelessWidget {
         ),
         FlatButton(
           child: Text(
-            "Filmes",
+            "Popular",
             style: TextStyle(
               fontSize: 16.0,
               color: Colors.white,
@@ -174,7 +170,7 @@ class CustomSliverAppBar extends StatelessWidget {
         ),
         FlatButton(
           child: Text(
-            "Minha lista",
+            "Your Channels",
             style: TextStyle(
               fontSize: 16.0,
               color: Colors.white,

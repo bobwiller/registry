@@ -50,7 +50,11 @@ const pwcc = User(
   const danda = User(
   name: 'dave & adams',
     imageUrl: 'assets/images/da.jpg',
-    stories: placeholderStories);    
+    stories: placeholderStories);  
+  const pack = User(
+  name: 'pack breaks',
+    imageUrl: 'assets/images/pack.jpg',
+    stories: placeholderStories);         
 
 
 const currentUser = nickwu241;

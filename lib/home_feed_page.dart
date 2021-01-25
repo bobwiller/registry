@@ -101,7 +101,8 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
     steve,
     ken,
     ebay,
-    danda
+    danda,
+    pack
   ];
 
   @override
