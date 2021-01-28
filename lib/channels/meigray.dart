@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:registry/channels/meigray_header.dart';
 import 'package:registry/models.dart';
 import 'package:registry/channels/heritage_header.dart';
 
-class HeritageChannel extends StatefulWidget {
+import 'meigray_body.dart';
+import 'meigray_footer.dart';
+
+class MeiGrayChannel extends StatefulWidget {
   final User friend;
  // final Object avatarTag;
 
-  HeritageChannel(
+  MeiGrayChannel(
     this.friend, );
 
   @override
   _HeritageChannelState createState() => _HeritageChannelState();
 }
 
-class _HeritageChannelState extends State<HeritageChannel> {
+class _HeritageChannelState extends State<MeiGrayChannel> {
   @override
   Widget build(BuildContext context) {
 
@@ -94,34 +98,16 @@ elevation: 8.0,
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              new HeritageHeader(
+              new MeiGrayHeader(
                 widget.friend,
               ),
               new Padding(
                 padding: const EdgeInsets.all(24.0),
-                child: 
-                Container(
-                 // color: Color.fromRGBO(58, 66, 86, 1.0),
-                  decoration: BoxDecoration(color: Color.fromRGBO(58, 66, 86, 1.0)),
-         child: ListView.builder(
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        itemCount: 8,
-        itemBuilder: (BuildContext context, int index) {
-          return makeCard(index);
-        },
-      ),
-      
-      ),
-                
-                
-                
-                
-                
-              //  Container(), // new FriendDetailBody(widget.friend),
+                child: MeiGrayBody()
+
               ),
               Container(),
-              //new FriendShowcase(widget.friend),
+              MeiGrayFooter(),
             ],
           ),
         ),

@@ -14,6 +14,7 @@ class HorizontalListItem extends StatelessWidget {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+         //   Image.network(link, fit: BoxFit.scaleDown),
             CachedNetworkImage(
          //     boxfit: BoxFit.scaleDown,
               imageUrl: link,
@@ -27,23 +28,29 @@ class HorizontalListItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Card(
-                color: Colors.black,
+                color: Colors.grey[700],
                 elevation: 4,
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 120,
+                      child:
                     CachedNetworkImage(
                       imageUrl:
                           link,
                       width: defaultWidth,
-                    ),
+                    )),
                     Card(
                       color: Colors.orange,
                       child:
-                      Column(children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(children: [
                     Text("Now Open"),
                     Text("Ends Feb 6")
 
-                      ],))
+                        ],),
+                      ))
                   ],
                 ))
           ],

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:registry/ui_utils.dart';
 import 'channels/heritage.dart';
+import 'channels/meigray.dart';
 import 'channels/my_portfolio.dart';
 import 'models.dart';
 import 'avatar_widget.dart';
 import 'post_widget.dart';
+import 'channels/pack.dart';
 
 class HomeFeedPage extends StatefulWidget {
   final ScrollController scrollController;
@@ -122,7 +124,11 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
             MyPortfolioChannel(_users[_currentChannel])
               : _currentChannel == 2 ?
                 HeritageChannel(_users[_currentChannel])
-                :   
+                :   _currentChannel == 5 ?
+                MeiGrayChannel(_users[_currentChannel])
+                :   _currentChannel == 12 ?
+                PackChannel()
+                :
           PostWidget(_posts[i - 1]); 
           
       },
@@ -154,7 +160,8 @@ class _StoriesBarWidgetState extends State<StoriesBarWidget> {
     steve,
     ken,
     ebay,
-    danda
+    danda,
+    pack
   ];
 
   void _onUserStoryTap(BuildContext context, int i) {

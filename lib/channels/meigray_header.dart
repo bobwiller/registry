@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../models.dart';
-import 'diagonal_background.dart';
+import '../widgets/diagonal_background.dart';
 
-class HeritageHeader extends StatelessWidget {
-  static const BACKGROUND_IMAGE = 'assets/images/heritage_office.jpg';
+class MeiGrayHeader extends StatelessWidget {
+  static const BACKGROUND_IMAGE = 'assets/images/mei_hero.jpg';
 
-  HeritageHeader(
+  MeiGrayHeader(
     this.friend, );
 
   final User friend;
@@ -22,7 +22,7 @@ class HeritageHeader extends StatelessWidget {
         height: 240.0,
         fit: BoxFit.cover,
       ),
-      color: const Color(0xBB704214),
+      color: const Color(0xBB555555),
     );
   }
 
@@ -30,7 +30,7 @@ class HeritageHeader extends StatelessWidget {
     return new Hero(
       tag: friend.name,
       child: new CircleAvatar(
-        child: new Image.asset('assets/images/heritage_logo.png'),
+        child: new Image.asset('assets/images/m_2_logo.jpg'),
         radius: 50.0,
       ),
     );
@@ -68,7 +68,7 @@ class HeritageHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           _createPillButton(
-            'HIRE ME',
+            'Contact Us',
             backgroundColor: theme.accentColor,
           ),
           new DecoratedBox(

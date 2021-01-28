@@ -136,7 +136,7 @@ SizedBox(
                                   posterUrls:
                                       [
                                         "https://goldinauctions.com/ItemImages/000069/69403b_lg.jpeg",
-                                        "https://media.npr.org/assets/img/2020/06/29/steve-aoki-1-credit-brian-ziff_rs_wide-44e4bedf2208fae1ad841317a7612e2b2bf63588-s800-c85.jpg",
+                                    //    "https://media.npr.org/assets/img/2020/06/29/steve-aoki-1-credit-brian-ziff_rs_wide-44e4bedf2208fae1ad841317a7612e2b2bf63588-s800-c85.jpg",
                                         "https://cdn.vox-cdn.com/thumbor/MhC7iz0laQdZry12xPvlmbIyl2A=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/16257292/bills.jpg",
                                         "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5cfe6e6c4c687b0008593078%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D526%26cropX2%3D2241%26cropY1%3D121%26cropY2%3D1835",
                                         "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/stan-lee-arrives-at-the-premiere-of-disney-and-marvels-news-photo-950501274-1542049801.jpg",

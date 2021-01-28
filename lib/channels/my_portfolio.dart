@@ -17,18 +17,18 @@ class _MyPortfolioChannelState extends State<MyPortfolioChannel> {
   @override
   Widget build(BuildContext context) {
 
-    List<String> actions = [
-      "My Portfolio",
-      "My Collection",
-      "My Investments",
-      "My Channels",
-      "My Posts",
-      "My Want Lists",
-      "Watching/Bidding/Offers"
+    List<ActionItem> actions = [
+      ActionItem("My Portfolio", Icons.account_balance, ""),
+      ActionItem("My Collection", Icons.attach_money, "42 items"),
+      ActionItem("My Investments", Icons.receipt, "+ 17%"),
+      ActionItem("My Channels", Icons.compare_arrows, "16 subscriptions"),
+      ActionItem("My Posts", Icons.sentiment_satisfied, "0 posts"),
+      ActionItem("My Want Lists", Icons.phone, "9 items"),
+      ActionItem("Watching/Bidding/Offers", Icons.data_usage, "3 ending soon")
     ];
 
 
-ListTile makeListTile(int lesson) => ListTile(
+ListTile makeListTile(int index) => ListTile(
           contentPadding:
               EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           leading: Container(
@@ -36,10 +36,10 @@ ListTile makeListTile(int lesson) => ListTile(
             decoration: new BoxDecoration(
                 border: new Border(
                     right: new BorderSide(width: 1.0, color: Colors.white24))),
-            child: Icon(Icons.autorenew, color: Colors.white),
+            child: Icon(actions[index].icons, color: Colors.white),
           ),
           title: Text(
-            "lesson.title",
+            actions[index].title,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
@@ -59,7 +59,7 @@ ListTile makeListTile(int lesson) => ListTile(
                 flex: 4,
                 child: Padding(
                     padding: EdgeInsets.only(left: 10.0),
-                    child: Text("Level 12",
+                    child: Text(actions[index].subTitle,
                         style: TextStyle(color: Colors.white))),
               )
             ],
@@ -140,4 +140,14 @@ elevation: 8.0,
      
     
     
+}
+
+
+class ActionItem {
+  String title;
+  IconData icons;
+  String subTitle;
+
+  ActionItem(this.title, this.icons, this.subTitle);
+
 }
